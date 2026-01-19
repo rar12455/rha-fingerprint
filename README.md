@@ -1,2 +1,2 @@
 # RHA256
-a custom hashmap, implemented in C
+a custom hashmap algorithm,implemented in C
