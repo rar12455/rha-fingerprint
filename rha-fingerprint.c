@@ -185,7 +185,7 @@ int main(int argc, char *argv[]) {
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "-h") == 0) {
 	    printf("----------------------------------\n");
-            printf("rha256 - custom hashmap algorithm:\n");
+            printf("rha-fingerprint - RHA Fingerprint Encoder:\n");
 	    printf("----------------------------------\n");
 	    printf(">Current limitations:\n");
 	    printf("-No reliable distinction between capitalized characters and non-capitalized ones.\n");
