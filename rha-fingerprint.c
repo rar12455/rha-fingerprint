@@ -64,8 +64,7 @@ void count_characters(const char *str) {
 		}
 		if (i == 'i'){
 			bit = 9;
-			multiplier = counts[i];
-			hex_i = bit * multiplier;
+			multiplier = counts[i]; hex_i = bit * multiplier;
 		}
 		if (i == 'j'){
 			bit = 10;
@@ -152,11 +151,10 @@ void count_characters(const char *str) {
 			multiplier = counts[i];
 			hex_z = bit * multiplier;
 		}
-		if (i == ' '){
-			hex_whitespace = 0;
-		}
 
+		
 		final_hex = hex_a + hex_b + hex_c + hex_d + hex_e + hex_f + hex_g + hex_h + hex_i + hex_j + hex_k + hex_l + hex_m +hex_n + hex_o + hex_p + hex_q + hex_r + hex_s + hex_t + hex_u + hex_v + hex_w + hex_x + hex_y + hex_z + hex_whitespace;
+				
    		final_hex = final_hex + hex_sig;	
 
 
@@ -168,6 +166,8 @@ void count_characters(const char *str) {
 
     
         }
+
+
     }
    
 
@@ -202,10 +202,14 @@ int main(int argc, char *argv[]) {
         }
     }
 
-
-    char code[256];
+    char code[100];
     printf("enter code to encode: ");
-    scanf("%s",code);
+    fgets(code, sizeof(code), stdin);
+    size_t len = strcspn(code, "\n");
+    if (len < sizeof(code)) {
+    	code[len] = '\0';
+	}
+    printf("%s\n",code);
     count_characters(code);
     hexabyte();
     return 0;
